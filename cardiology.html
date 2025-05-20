@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Mạch - Four Rock</title>
+  
+  <!-- Google Fonts & Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="public/css/style.css">
+  
+  <!-- Inline CSS cho một số tùy chỉnh -->
+  <style>
+    /* HERO SECTION & Registration Form Overlay (nếu bạn muốn giữ) */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .registration-overlay {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      width: 90%;
+      max-width: 300px;
+      z-index: 2;
+    }
+    .registration-overlay .card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .registration-overlay .card-header {
+      background-color: #007bff;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .registration-overlay .card-header h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .registration-overlay .card-body {
+      padding: 0.75rem;
+    }
+    .registration-overlay .form-control {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.65rem;
+    }
+    .registration-overlay .btn {
+      font-size: 0.9rem;
+      padding: 0.45rem 1rem;
+    }
+    /* Service Card Hover Effect */
+    #services .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #services .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.php">Four Rock</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <!-- Trang chủ -->
+            <li class="nav-item"><a class="nav-link" href="#hero">Trang chủ</a></li>
+            <!-- Blog -->
+            <li class="nav-item"><a class="nav-link" href="hospital-blog.html">Blog</a></li>
+            <!-- Dịch vụ: Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="serviceDropdown" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dịch vụ
+              </a>
+              <div class="dropdown-menu" aria-labelledby="serviceDropdown">
+                <a class="dropdown-item" href="general-checkup.html">Khám tổng quát</a>
+                <a class="dropdown-item" href="cardiology.html">Tim mạch</a>
+                <a class="dropdown-item" href="testing.html">Xét nghiệm</a>
+              </div>
+            </li>
+            <!-- Giới thiệu: Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Giới thiệu
+              </a>
+              <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <a class="dropdown-item" href="hospital-blog.html#benhvien">Bệnh viện</a>
+                <a class="dropdown-item" href="hospital-blog.html#bacsi">Bác sĩ</a>
+              </div>
+            </li>
+            <!-- Tin tức & Liên hệ -->
+            <li class="nav-item"><a class="nav-link" href="#news">Tin tức</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
+            <!-- Nút Đăng ký & Đăng nhập -->
+            <!-- Đường dẫn sửa thành "view/register.php" (vì register.php nằm trong folder view) -->
+            <li class="nav-item"><a class="btn btn-primary mr-2" href="view/register.php">Đăng ký</a></li>
+            <li class="nav-item"><a class="btn btn-outline-primary" href="view/login.php">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section for Cardiology -->
+  <section class="jumbotron jumbotron-fluid text-center mb-0" style="background: url('public/images/cardiology-hero.jpg') no-repeat center center; background-size: cover; color: #fff;">
+    <div class="container">
+      <h1 class="display-4">Chăm sóc Tim Mạch</h1>
+      <p class="lead">Giải pháp toàn diện cho sức khỏe tim mạch của bạn.</p>
+    </div>
+  </section>
+
+  <!-- Service Detail Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">Giới thiệu Dịch Vụ Tim Mạch</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="public/images/cardiology.jpg" alt="Dịch vụ Tim Mạch" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h3>Định hướng chăm sóc tim mạch</h3>
+          <p>Tại Four Rock, chúng tôi tập trung vào việc sử dụng công nghệ tiên tiến để đánh giá và cải thiện tình trạng tim mạch của bạn. Dịch vụ của chúng tôi bao gồm:</p>
+          <ul>
+            <li>Khám và kiểm tra chức năng tim qua siêu âm và EKG.</li>
+            <li>Phân tích dữ liệu tim mạch bằng các thiết bị hiện đại.</li>
+            <li>Hỗ trợ tư vấn điều trị và theo dõi liên tục.</li>
+          </ul>
+          <p>Quá trình chăm sóc được thực hiện bởi đội ngũ bác sĩ chuyên nghiệp, tận tâm nhằm mang lại sự an tâm và sức khỏe tốt nhất.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quy trình điều trị tim mạch -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 text-center">Quy trình điều trị</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="fas fa-notes-medical fa-3x text-primary"></i>
+          <h4 class="mt-3">Bước 1: Khám sơ bộ</h4>
+          <p>Đánh giá mức độ và dấu hiệu bất thường của tim.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-heart fa-3x text-primary"></i>
+          <h4 class="mt-3">Bước 2: Chẩn đoán</h4>
+          <p>Sử dụng công nghệ hiện đại để xác định tình trạng tim mạch.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-hand-holding-heart fa-3x text-primary"></i>
+          <h4 class="mt-3">Bước 3: Điều trị & Tư vấn</h4>
+          <p>Bác sĩ chuyên khoa sẽ đưa ra phác đồ điều trị phù hợp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action đăng ký -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2>Đăng ký khám tim mạch ngay</h2>
+      <p class="lead">Hãy đặt lịch để được khám và tư vấn bởi các chuyên gia hàng đầu.</p>
+      <a href="index.php" class="btn btn-light btn-lg">Đăng ký ngay</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-3 bg-dark text-white text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Four Rock. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
