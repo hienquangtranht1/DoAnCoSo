@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #343a40;
+    font-weight: bold;
+}
+
+/* Bảng danh sách bệnh nhân */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ảnh bệnh nhân */
+.table img {
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Nút hành động */
+.btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* Modal chỉnh sửa bệnh nhân */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #343a40;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-body img {
+    display: block;
+    margin: 0 auto 10px;
+    border: 2px solid #ccc;
+}
+
+.modal-body .form-control {
+    border-radius: 5px;
+}
