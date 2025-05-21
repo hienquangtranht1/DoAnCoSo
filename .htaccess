@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /ProjectBooking/
+
+# Trang mặc định (sẽ tự động load index.php)
+DirectoryIndex index.php
+
+# Không áp dụng rewrite cho phương thức POST
+RewriteCond %{REQUEST_METHOD} !POST
+
+# Bỏ qua nếu yêu cầu trỏ đến một file hay thư mục thực sự
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Chuyển hướng URL dạng /controller -> index.php?controller=controller
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?controller=$1 [L,QSA]
+
+# Chuyển hướng URL dạng /controller/action -> index.php?controller=controller&action=action
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ index.php?controller=$1&action=$2 [L,QSA]
+# Chuyển tất cả request không phải file/thư mục tồn tại đến web.php
+
+RewriteRule ^(.*)$ web.php?url=$1 [QSA,L]
