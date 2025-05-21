@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /BOOKING/
+
+# Trang mặc định (DirectoryIndex) được đặt là dashboard.php (hoặc file mặc định của bạn)
+
+
+# Không áp dụng rewrite cho các request POST (để bảo toàn dữ liệu khi form submit)
+RewriteCond %{REQUEST_METHOD} !POST
+
+# Nếu đường dẫn yêu cầu tồn tại dưới dạng file hoặc thư mục thật, bỏ qua rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Chuyển hướng URL dạng /controller/action thành: web.php?controller=controller&action=action
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ web.php?controller=$1&action=$2 [L,QSA]
+
+# Chuyển hướng URL dạng /controller thành: web.php?controller=controller
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ web.php?controller=$1 [L,QSA]
