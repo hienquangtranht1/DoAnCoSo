@@ -212,6 +212,9 @@ $loggedInUser = isset($_SESSION['user']) ? $_SESSION['user'] : null;
               </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="#news">Tin tức</a></li>
+                    <li class="nav-item">
+                <a class="nav-link" href="view/qa_doctor.php">Hỏi đáp với bác sĩ</a>
+            </li>
             <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
             <!-- Menu người dùng -->
             <?php if ($loggedInUser): ?>
